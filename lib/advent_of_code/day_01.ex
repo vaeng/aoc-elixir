@@ -18,13 +18,6 @@ defmodule AdventOfCode.Day01 do
       str
       |> String.trim()
       |> String.split("\n\n")
-      |> Enum.map(&stringToIntArray(&1))
+      |> Enum.map(&AdventOfCode.Util.stringToIntArray(&1))
       |> Enum.map(&Enum.sum(&1))
-
-  @spec stringToIntArray(String.t()) :: list(integer)
-  def stringToIntArray(xs),
-    do:
-      xs
-      |> String.split("\n")
-      |> Enum.map(&String.to_integer(&1))
 end
